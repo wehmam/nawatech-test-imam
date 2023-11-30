@@ -1,4 +1,4 @@
-d# Laravel JSON Manipulation API For Nawatech Interview Test
+## Laravel JSON Manipulation API For Nawatech Interview Test
 
 This Laravel project demonstrates JSON manipulation skills by creating an API endpoint that manipulates and returns data from two JSON files. The objective is to showcase PHP Laravel skills, logic skills, and JSON manipulation skills.
 
