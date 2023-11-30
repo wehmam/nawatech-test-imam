@@ -1,66 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+d# Laravel JSON Manipulation API For Nawatech Interview Test
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This Laravel project demonstrates JSON manipulation skills by creating an API endpoint that manipulates and returns data from two JSON files. The objective is to showcase PHP Laravel skills, logic skills, and JSON manipulation skills.
 
-## About Laravel
+## Project Structure
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The project has the following structure:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **app/Http/Controllers/Api/ApiController.php**: Controller responsible for handling API requests.
+- **storage/data1.json**: JSON file containing user booking data.
+- **storage/data2.json**: JSON file containing workshop data.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## API Endpoint
 
-## Learning Laravel
+### Manipulate JSON Data
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Endpoint:**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```
+GET /data
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Description:**
 
-## Laravel Sponsors
+This endpoint manipulates the data from `data1.json` and `data2.json` to create a new structure and sorts the data based on the 'ahass_distance' field.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Request:**
 
-### Premium Partners
+- Method: GET
+- Headers: None
+- Body: None
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+**Response:**
 
-## Contributing
+- Status: 200 OK
+- Headers:
+  - Content-Type: application/json
+- Body:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```json
+{
+    "status": 1,
+    "message": "Data Successfully Retrieved.",
+    "data": [
+        {
+            "name": "bayu",
+            "email": "bayu@yahoo.com",
+            "booking_number": "100190109431",
+            "book_date": "2022-06-10",
+            "ahass_code": "17236",
+            "ahass_name": "AHASS MEGATAMA MOTOR",
+            "ahass_address": "",
+            "ahass_contact": "",
+            "ahass_distance": 0,
+            "motorcycle_ut_code": "Y1G02N02L1A A/T",
+            "motorcycle": "BEAT POP ESP CW COMIC"
+        },
+        {
+            "name": "ilyas",
+            "email": "ilyas@gmail.com",
+            "booking_number": "117236109426",
+            "book_date": "2022-06-08",
+            "ahass_code": "00190",
+            "ahass_name": "Dunia Motor Kebayoran Lama",
+            "ahass_address": "Kebayoran Lama, Jakarta Selatan",
+            "ahass_contact": "085600000000",
+            "ahass_distance": 2.5,
+            "motorcycle_ut_code": "NC11B3C2A/T",
+            "motorcycle": "NEW BEAT CAST WHEEL"
+        },
+        {
+            "name": "ilyas",
+            "email": "ilyas@gmail.com",
+            "booking_number": "117550109404",
+            "book_date": "2022-06-08",
+            "ahass_code": "00190",
+            "ahass_name": "Dunia Motor Kebayoran Lama",
+            "ahass_address": "Kebayoran Lama, Jakarta Selatan",
+            "ahass_contact": "085600000000",
+            "ahass_distance": 2.5,
+            "motorcycle_ut_code": "R2B02K01S1K M/T",
+            "motorcycle": "REVO FIT JKT"
+        },
+        {
+            "name": "anwar",
+            "email": "anwar@mail.com",
+            "booking_number": "101000103066",
+            "book_date": "2022-03-12",
+            "ahass_code": "01000",
+            "ahass_name": "Wahana Honda Gunung Sahari",
+            "ahass_address": "Jalan Gunung Sahari",
+            "ahass_contact": "085800000000",
+            "ahass_distance": 5.2,
+            "motorcycle_ut_code": "H5C02R20S1 M/T",
+            "motorcycle": "NEW CB150R STREETFIRE"
+        },
+        {
+            "name": "heru",
+            "email": "heru@gmail.com",
+            "booking_number": "10100062661",
+            "book_date": "2022-06-09",
+            "ahass_code": "11497",
+            "ahass_name": "AHASS KAWI Indah Jaya Motor 3",
+            "ahass_address": "Jakarta Pusat",
+            "ahass_contact": "085300000000",
+            "ahass_distance": 10.3,
+            "motorcycle_ut_code": "HH1B02N41S1 A/T",
+            "motorcycle": "BEAT SPORTY CBS MMC"
+        },
+        {
+            "name": "kibo",
+            "email": "kibo@gmail.com",
+            "booking_number": "117550109401",
+            "book_date": "2022-05-10",
+            "ahass_code": "11497",
+            "ahass_name": "AHASS KAWI Indah Jaya Motor 3",
+            "ahass_address": "Jakarta Pusat",
+            "ahass_contact": "085300000000",
+            "ahass_distance": 10.3,
+            "motorcycle_ut_code": "D1I02N27M1 A/T",
+            "motorcycle": "BEAT STREET"
+        },
+        {
+            "name": "santoso",
+            "email": "santoso@microsoft.com",
+            "booking_number": "101000109430",
+            "book_date": "2022-03-12",
+            "ahass_code": "07577",
+            "ahass_name": "AHASS TUNGGAL JAYA",
+            "ahass_address": "Jakarta Timur",
+            "ahass_contact": "085200000000",
+            "ahass_distance": 11.5,
+            "motorcycle_ut_code": "NF11C1CD M/T",
+            "motorcycle": "BLADE S"
+        }
+    ]
+}
+```
 
-## Code of Conduct
+## How to Run the Project
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Clone the repository:
 
-## Security Vulnerabilities
+   ```bash
+   git clone https://github.com/wehmam/nawatech-test-imam.git
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2. Install dependencies:
 
-## License
+   ```bash
+   composer install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. Copy the example environment file:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. Generate the application key:
+
+   ```bash
+   php artisan key:generate
+   ```
+
+5. Run the development server:
+
+   ```bash
+   php artisan serve
+   ```
+
+6. Access the API endpoint in your browser:
+
+   [http://localhost:8000/api/data](http://localhost:8000/api/data)
